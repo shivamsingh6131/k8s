@@ -1,25 +1,71 @@
-kubectl get pod
-kubectl apply -f mongo-config.yml
-kubectl apply -f mongo-secret.yml
-kubectl apply -f mongo.yml
+### Commands
+
+```jsx
+kubectl get pod 
+```
+
+```jsx
+kubectl apply -f mongo-config.yml 
+```
+
+```jsx
+kubectl apply -f mongo-secret.yml 
+```
+
+```jsx
+kubectl apply -f mongo.yml 
+```
+
+```jsx
 kubectl apply -f webapp.yml
+```
 
-kubectl get all
-kubectl get configmap
-kubectl get secret
-kubectl describe service webapp-service
-kubectl describe pod mongo-deployment-855b879886-zgc69
+```jsx
+kubectl get all 
+```
+
+```jsx
+kubectl get configmap 
+```
+
+```jsx
+kubectl get secret 
+```
+
+```jsx
+kubectl describe service webapp-service 
+```
+
+```jsx
+kubectl describe pod mongo-deployment-855b879886-zgc69 
+```
+
+```jsx
 kubectl logs webapp-deployment-9fccd564d-9b5pl
+```
 
-# To access weapp on browser
-kubectl get svc => chosse nodeport
-minikube ip => http://192.168.49.2
-kubectl get node -o wide
+# To access webapp on browser
 
-minikube dashboard
-kubectl get deployments
-kubectl delete deployment webapp-deployment
-kubectl get configmap
-kubeclt delete configmap mongo-config
+```jsx
+kubectl get svc
+```
 
-#acessable => http://192.168.49.2:30100/
+ => chosse nodeport minikube ip => [http://192.168.49.2](http://192.168.49.2/) kubectl get node -o wide
+
+```jsx
+minikube dashboard 
+```
+
+```jsx
+kubectl get deployments 
+```
+
+```jsx
+kubectl delete deployment webapp-deployment 
+```
+
+```jsx
+kubectl get configmap kubeclt delete configmap mongo-config
+```
+
+#acessable => [http://192.168.49.2:30100/](http://192.168.49.2:30100/)
