@@ -3,20 +3,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-deployment
+  name: mongo-deployment  #deployement name
   labels:
-    app: mongo
+    app: mongo  #deployement label (deployement identifier)
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: mongo
-  template:
+    matchLabels: #this helps k8s to determine which pod belongs to which deployement (all pods match app:mongo label belongs to this deployement)
+      app: mongo  
+  template:  # configuration of pod
     metadata:
       labels:
-        app: mongo
+        app: mongo  #pod label  (pod identifier)
     spec:
-      containers:
+      containers: #container inside pod
         - name: mongodb
           image: mongo:5.0
           ports:
@@ -32,15 +32,15 @@ spec:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-password 
----
+--- #service
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongo-service
+  name: mongo-service #name of service (inside configMap)
 spec:
-  selector:
-    app: mongo
+  selector: #service need to forward the req, using the label selector it forwards to the pod.
+    app: mongo #should match the label of pod
   ports:
     - protocol: TCP
       port: 27017
-      targetPort: 27017 #port of pod (container port)
+      targetPort: 27017 #port of pod (containerPort) => service forward the requrest to pod

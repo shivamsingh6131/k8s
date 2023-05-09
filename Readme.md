@@ -16,5 +16,10 @@ kubectl get svc => chosse nodeport
 minikube ip => http://192.168.49.2
 kubectl get node -o wide
 
+minikube dashboard
+kubectl get deployments
+kubectl delete deployment webapp-deployment
+kubectl get configmap
+kubeclt delete configmap mongo-config
 
 #acessable => http://192.168.49.2:30100/
